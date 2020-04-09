@@ -12,7 +12,7 @@ for ind1=1:N
         
     end
 end
-decoded=rref(coded); % reduced row echelon
+decoded=abs(rref(coded)); % reduced row echelon
 decoded_loc=(sum(decoded,2)==1); % use row wise sum to check if the decoding possible those rows shows the decoded ones
 decoded_inds=sum(decoded(decoded_loc,:)); % first remove all other rows than the decodable ones 
 %than check the position of the 1s to lable decoded indicies.
